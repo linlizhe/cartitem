@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品列表页</title>
+    <title>商品列表页3</title>
     <link rel="stylesheet" href="css/list.css">
 </head>
 
@@ -70,13 +70,13 @@
 
     const $list = $('.list ul');
     $.ajax({
-            url: 'http://localhost/JS2007/php/jingdong.php',
-            dataType: 'json' //设置json格式的对象。
-        })
+        url: 'http://localhost/JS2007/php/jingdong.php',
+        dataType: 'json' //设置json格式的对象。
+    })
         .done((data) => {
             let $renderdata = data;
             let $strhtml = ''; //拼接字符串
-            $.each($renderdata, function(index, value) {
+            $.each($renderdata, function (index, value) {
                 $strhtml += `
                 <li>
                         <a href="detail.html?sid=${value.sid}">
@@ -98,14 +98,14 @@
     //获取元素里面的li元素，鼠标移入变换边框。
     //异步渲染的，无法获取元素。
     const $listul = $('.list ul');
-    $listul.on('mouseover', 'li', function() { //第二个参数就是被委托(无法获取的元素)的元素。
+    $listul.on('mouseover', 'li', function () { //第二个参数就是被委托(无法获取的元素)的元素。
         // console.log($(this));//$(this)：当前被委托的元素。
         $(this).css({
             border: '1px solid red'
         });
     });
 
-    $listul.on('mouseout', 'li', function() { //第二个参数就是被委托(无法获取的元素)的元素。
+    $listul.on('mouseout', 'li', function () { //第二个参数就是被委托(无法获取的元素)的元素。
         // console.log($(this));//$(this)：当前被委托的元素。
         $(this).css({
             border: '1px solid #ccc'
